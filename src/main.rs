@@ -48,7 +48,7 @@ async fn main() -> Result<(), lapin::Error> {
         let message = match std::str::from_utf8(&delivery.data) {
             Ok(message) => message,
             Err(_) => {
-                println!("Could not decode message from utf87 charset.")
+                println!("Could not decode message from utf87 charset.");
                 continue
             } // should send to sentry at this point
         };
